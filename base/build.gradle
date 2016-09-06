@@ -1,0 +1,60 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        // Enabling multidex support.
+        multiDexEnabled true
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+}
+
+repositories {
+    // for sdk aar
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile rootProject.ext.testDependencies.junit
+
+    compile rootProject.ext.libOkHttp
+    compile rootProject.ext.libButterknife
+    compile rootProject.ext.libGson
+    // for imageLoad
+    compile rootProject.ext.libGlide
+    compile rootProject.ext.libGlideOkHttpIntegration
+    //    compile 'com.google.android:flexbox:0.2.2'
+    compile rootProject.ext.libDesign
+    compile rootProject.ext.libeventbus
+    compile rootProject.ext.libRxJava
+    compile rootProject.ext.libRxAndroid
+
+    compile 'com.umeng.analytics:analytics:latest.integration'
+
+    compile 'in.srain.cube:ultra-ptr:1.0.11'
+
+}

@@ -1,0 +1,127 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:2.1.2'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+def leakcanaryVersion = "1.3.1"
+def daggerVersion = "2.2"
+def robolectricVersion = "3.0"
+def supportVersion = "23.4.0"
+def rxandroidVersion = "1.2.1"
+def annotationVersion = "10.0-b28"
+def rxjavaVersion = "1.1.6"
+def rxlifecycleVersion = "0.4.0"
+def butterknifeVeriosn = "7.0.1"
+def retrofitVeriosn = "2.0.2"
+def okHttpVersion = '3.2.0'
+def richeditorAndroidVersion = "1.1.0"
+def gridLibraryVersion = "1.0.5"
+def supertoastsVersion = "1.3.4@aar"
+def junitVersion = "4.12"
+def testRunnerVersion = "0.4.1"
+def umengAnalyticsVeriosn = "latest.integration"
+def pullrefreshlayoutVersion = "1.2.0"
+def mockitoCoreVersion = "1.9.5"
+def espressoVersion = "2.2.1"
+def assertjVersion = "1.7.1"
+def bottomNavigationVersion = "1.2.0"
+def glideVersion = "3.6.1"
+def logVersion = "1.1.8"
+def gsonVersion = "2.6.2"
+def glideOkHttpIntegration = "1.3.0"
+def eventbusVersion = "3.0.0"
+
+ext{
+    applicationId = "com.jiahao.wwyy.activity"
+    buildToolsVersion = "23.0.2"
+    compileSdkVersion = 23
+    minSdkVersion = 14
+    targetSdkVersion = 22
+    versionCode = 17
+    versionName = "1.5.2"
+
+    abortOnLintError = false
+//    checkLintRelease = false
+//    useJack = false
+    abortOnLintError = false
+
+    javaVersion = JavaVersion.VERSION_1_8
+
+//    libDagger = "com.google.dagger:dagger:${daggerVersion}"
+//    libRobolectric = "org.robolectric:robolectric:${robolectricVersion}"
+    libAppcompat = "com.android.support:appcompat-v7:${supportVersion}"
+    libSupport = "com.android.support:support-v4:${supportVersion}"
+    libRecycleView = "com.android.support:recyclerview-v7:${supportVersion}"
+    libCardview = "com.android.support:cardview-v7:${supportVersion}"
+    libDesign = "com.android.support:design:${supportVersion}"
+    libRxJava = "io.reactivex:rxjava:${rxjavaVersion}"
+    libRxAndroid = "io.reactivex:rxandroid:${rxandroidVersion}"
+    libAnnotation = "org.glassfish:javax.annotation:${annotationVersion}"
+    libRxlifecycle = "com.trello:rxlifecycle:${rxlifecycleVersion}"
+//    libRxlifecycleComponent = "com.trello:rxlifecycle-components:${rxlifecycleVersion}"
+    libButterknife = "com.jakewharton:butterknife:${butterknifeVeriosn}"
+    libRetrofit = "com.squareup.retrofit2:retrofit:${retrofitVeriosn}"
+    libRetrofitAdapterRxjava = "com.squareup.retrofit2:adapter-rxjava:${retrofitVeriosn}"
+    libRetrofitConverterGson = "com.squareup.retrofit2:converter-gson:${retrofitVeriosn}"
+    libOkHttpLoggingInterceptor = "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}"
+//    libRicheditorAndroid = "jp.wasabeef:richeditor-android:${richeditorAndroidVersion}"
+//    libGridLibrary = "com.etsy.android.grid:library:${gridLibraryVersion}"
+//    libSupperToast = "com.github.johnpersano:supertoasts:${supertoastsVersion}"
+    libJunit = "junit:junit:${junitVersion}"
+    libUmengAnalytics = "com.umeng.analytics:analytics:${umengAnalyticsVeriosn}"
+//    libPullrefreshlayout = "com.baoyz.pullrefreshlayout:library:${pullrefreshlayoutVersion}"
+//    libAssertjCore = "org.assertj:assertj-core:${assertjVersion}"
+//    libEspressoCore = "com.android.support.test.espresso:espresso-core:${espressoVersion}"
+//    libBottomNavigation = "com.ashokvarma.android:bottom-navigation-bar:${bottomNavigationVersion}"
+    libGlide = "com.github.bumptech.glide:glide:${glideVersion}"
+    libGlideOkHttpIntegration = "com.github.bumptech.glide:okhttp-integration:${glideOkHttpIntegration}"
+    libLog = "com.github.tianzhijiexian:logger:${logVersion}"
+    libGson = "com.google.code.gson:gson:${gsonVersion}"
+    libeventbus = "org.greenrobot:eventbus:${eventbusVersion}"
+
+    // net
+    libOkHttp = "com.squareup.okhttp3:okhttp:${okHttpVersion}"
+
+    debugDependencies = [
+            leakCanary : "com.squareup.leakcanary:leakcanary-android:${leakcanaryVersion}"
+    ]
+
+    releaseDependencies = [
+            leakCanary : "com.squareup.leakcanary:leakcanary-android-no-op:${leakcanaryVersion}"
+    ]
+
+    testDependencies = [
+//            robolectric : "org.robolectric:robolectric:${robolectricVersion}",
+//            robolectricShadowsSupport : "org.robolectric:shadows-support-v4:${robolectricVersion}",
+//            robolectricHttpclient : "org.robolectric:shadows-httpclient:${robolectricVersion}",
+junit : "junit:junit:${junitVersion}",
+//            assertjCore : "org.assertj:assertj-core:${assertjVersion}",
+//            mockitoCore : "org.mockito:mockito-core:${mockitoCoreVersion}",
+leakCanary : "com.squareup.leakcanary:leakcanary-android-no-op:${leakcanaryVersion}"
+    ]
+//
+//    androidTestDependencies = [
+//            supportAnnotations : "com.android.support:support-annotations:${supportVersion}",
+//            testRunner : "com.android.support.test:runner:${testRunnerVersion}",
+//            testRules : "com.android.support.test:rules:${testRunnerVersion}",
+//            espressoCore : "com.android.support.test.espresso:espresso-core:${espressoVersion}"
+//    ]
+}

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:paddingBottom="20dp"
+                android:background="@color/transparent"
+              >
+
+
+    <LinearLayout
+        android:id="@+id/indicator_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="7dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="1dp">
+
+        <TextView
+            android:id="@+id/pull_to_refresh_text_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:maxEms="10"
+            android:minEms="6"
+            android:singleLine="true"
+            android:text="加载中，请稍候.."
+            android:textColor="@color/pull_refresh_text"
+            android:textSize="@dimen/pull_refresh_text"/>
+
+        <TextView
+            android:id="@+id/pull_to_refresh_time_list"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@color/pull_refresh_text"
+            android:textSize="@dimen/pull_refresh_text"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/pull_to_refresh_progress_list"
+        style="@style/custom_refresh_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+        android:layout_toLeftOf="@id/indicator_area"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/pull_to_refresh_image_list"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_toLeftOf="@id/indicator_area"
+        android:src="@drawable/pulltorefresh_down_arrow"/>
+
+</RelativeLayout>

@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">BaseLibrary</string>
+    <string name="data_error">数据加载失败</string>
+    <string name="parse_error">解析异常</string>
+    <string name="net_error">呃，网络好像出小差了......</string>
+    <string name="loading_data_error">页面加载失败\n请点击屏幕重新加载</string>
+    <string name="loading_hard">拼命加载中…</string>
+    <string name="pull_to_refresh_pull_label_list">下拉即可刷新..</string>
+    <string name="pull_to_refresh_release_label_list">松开即可刷新..</string>
+    <string name="pull_to_refresh_refreshing_label_list">加载中,请稍候..&#8230;</string>
+    <string name="pull_to_more_pull_label">滑动可以加载更多..</string>
+    <string name="pull_to_more_release_label">松开可以加载更多..</string>
+    <string name="pull_to_more_refreshing_label">加载中,请稍候..&#8230;</string>
+    <string name="no_data">暂无数据</string>
+    <string name="no_more_data">没有更多数据了</string>
+</resources>
